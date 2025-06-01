@@ -14,12 +14,8 @@ echo "Create symlinks of dotfiles (will not override if already exists)"
 [ -d "$HOME/.config" ] && ln -s $HOME/dotfiles/.config $HOME/.config || ln -s $HOME/dotfiles/.config $HOME/.config
 
 # fish shell
-echo "Install fish shell (will not install if already exists)"
-[ -x "$(command -v fish)" ] || brew install fish
-
-# add fish to /etc/shells
-echo "Add fish to /etc/shells"
-echo $(which fish) | sudo tee -a /etc/shells
+echo "Install fish shell & add fish to /etc/shells (will not install if already exists)"
+[ -x "$(command -v fish)" ] || brew install fish | echo $(which fish) | sudo tee -a /etc/shells
 
 # change default shell to fish
 echo "Change shell to fish"
