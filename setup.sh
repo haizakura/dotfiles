@@ -2,45 +2,32 @@
 
 # package manager: Homebrew
 # cask: kitty
-# formulae: fish mise starship bat zoxide fzf
+# formulae: fish mise starship bat zoxide fzf lsd fd ripgrep
 # fonts: Maple Mono NF CN
 
 # Homebrew
 echo "Install Homebrew (will not install if already exists)"
-[ -x "$(command -v brew)" ] || /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+[ -x "$(command -v brew)" ] || /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" || echo "Successfully installed Homebrew"
 
 # create symlinks
 echo "Create symlinks of dotfiles (will not override if already exists)"
 [ -d "$HOME/.config" ] && ln -s $HOME/dotfiles/.config/* $HOME/.config || ln -s $HOME/dotfiles/.config $HOME
 
 # fish shell
-echo "Install fish shell & add fish to /etc/shells & change shell to fish & run fish"
-[ -x "$(command -v fish)" ] || brew install fish || echo $(which fish) | sudo tee -a /etc/shells || chsh -s $(which fish) || fish
+echo "Install fish shell & add fish to /etc/shells & change shell to fish"
+[ -x "$(command -v fish)" ] || brew install fish || echo $(which fish) | sudo tee -a /etc/shells || chsh -s $(which fish) || echo "Successfully installed fish shell"
 
 # kitty
-echo "Install kitty terminal (will not install if already exists)"
-[ -x "$(command -v kitty)" ] || brew install --cask kitty
+echo "Install kitty terminal"
+[ -x "$(command -v kitty)" ] || brew install --cask kitty || echo "Successfully installed kitty terminal"
 
-# mise
-echo "Install mise (will not install if already exists)"
-[ -x "$(command -v mise)" ] || brew install mise
+# Install dependencies via Homebrew
+echo "Install dependencies via Homebrew (will not install if already exists)"
 
- # starship
-  echo "Install starship (will not install if already exists)"
-[ -x "$(command -v starship)" ] || brew install starship
-
-# bat
- echo "Install bat (will not install if already exists)"
-[ -x "$(command -v bat)" ] || brew install bat
-
-# zoxide
- echo "Install zoxide (will not install if already exists)"
-[ -x "$(command -v zoxide)" ] || brew install zoxide
-
-# fzf
- echo "Install fzf (will not install if already exists)"
-[ -x "$(command -v fzf)" ] || brew install fzf
+# mise starship bat zoxide fzf lsd fd ripgrep
+echo "Install mise starship bat zoxide fzf lsd fd ripgrep"
+brew install mise starship bat zoxide fzf lsd fd ripgrep || echo "Successfully installed dependencies"
 
 # fonts
 echo "Install Maple Mono NF CN fonts"
-brew install --cask font-maple-mono-nf-cn
+brew install --cask font-maple-mono-nf-cn || echo "Successfully installed Maple Mono NF CN fonts"
