@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# system required: macOS
 # package manager: Homebrew
 # cask: kitty
 # formulae: fish mise starship bat zoxide fzf lsd fd ripgrep git-delta difftastic
