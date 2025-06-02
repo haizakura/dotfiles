@@ -2,7 +2,7 @@
 
 # package manager: Homebrew
 # cask: kitty
-# formulae: fish mise starship bat zoxide fzf lsd fd ripgrep
+# formulae: fish mise starship bat zoxide fzf lsd fd ripgrep git-delta difftastic
 # fonts: Maple Mono NF CN
 
 # Homebrew
@@ -24,9 +24,9 @@ echo "Install kitty terminal"
 # Install dependencies via Homebrew
 echo "Install dependencies via Homebrew (will not install if already exists)"
 
-# mise starship bat zoxide fzf lsd fd ripgrep
-echo "Install mise starship bat zoxide fzf lsd fd ripgrep"
-brew install mise starship bat zoxide fzf lsd fd ripgrep || echo "Successfully installed dependencies"
+# mise starship bat zoxide fzf lsd fd ripgrep git-delta difftastic
+echo "Install mise starship bat zoxide fzf lsd fd ripgrep git-delta difftastic"
+brew install mise starship bat zoxide fzf lsd fd ripgrep git-delta difftastic || echo "Successfully installed dependencies"
 
 # fonts
 echo "Install Maple Mono NF CN fonts"
