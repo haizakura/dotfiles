@@ -3,6 +3,10 @@
 # raycast
 raycast
 
+# orbstack
+orbctl.fish
+kubectl.fish
+
 # Logs
 logs
 *.log
