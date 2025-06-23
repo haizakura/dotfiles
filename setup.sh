@@ -24,10 +24,32 @@ echo "Install kitty terminal"
 
 # Install dependencies via Homebrew
 echo "Install dependencies via Homebrew (will not install if already exists)"
+echo "Dependencies: fish mise starship bat zoxide fzf lsd fd ripgrep git-delta difftastic"
 
-# mise starship bat zoxide fzf lsd fd ripgrep git-delta difftastic
-echo "Install mise starship bat zoxide fzf lsd fd ripgrep git-delta difftastic"
-brew install mise starship bat zoxide fzf lsd fd ripgrep git-delta difftastic || echo "Successfully installed dependencies"
+# mise
+[ -x "$(command -v mise)" ] || brew install mise || echo "Successfully installed mise"
+
+# starship
+[ -x "$(command -V starship)" ] || brew install starship || echo "Successfully installed starship"
+
+# bat
+[ -x "$(command -V bat)" ] || brew install bat || echo "Successfully installed bat"
+
+# zoxide
+[ -x "$(command -V zoxide)" ] || brew install zoxide || echo "Successfully installed zoxide"
+
+# fzf
+[ -x "$(command --version fzf)" ] || brew install fzf || echo "Successfully installed fzf"
+
+# lsd
+[ -x "$(command -V lsd)" ] || brew install lsd || echo "Successfully installed lsd"
+
+# fd
+[ -x "$(command -V fd)" ] || brew install fd || echo "Successfully installed fd"
+
+# ripgrep git-delta difftastic
+echo "Install ripgrep git-delta difftastic"
+brew install ripgrep git-delta difftastic || echo "Successfully installed dependencies: ripgrep git-delta difftastic"
 
 # fonts
 echo "Install Maple Mono NF CN fonts"
